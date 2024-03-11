@@ -12,6 +12,9 @@
      --> Quantos processos serão criados?
      R: 8 processos foram criados a partir de 3 forks.
 
+     
+![nano lab02](https://github.com/arthurvignati/so/assets/161461962/5930aa9b-4c34-434e-9767-89867768a3ca)
+
      --> 
 
      --> lab02.c
