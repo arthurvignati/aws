@@ -1,7 +1,6 @@
  --> lab01
 
      --> As evidências de que o código foi de fato executado na AWS estão na captura de tela a seguir:
-     ![Captura de tela 2024-03-04 123618](https://github.com/arthurvignati/so/assets/161461962/301d14a6-c6ed-4555-8d5c-fec52bcddfe4)
 ![nano lab02](https://github.com/arthurvignati/so/assets/161461962/21997060-8eed-48f0-a5bc-765758ae1dc9)
 
   
