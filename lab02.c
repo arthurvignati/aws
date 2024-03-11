@@ -11,7 +11,7 @@ int main(void) {
   //inicializa os pipe's do filho e do pai antes do fork para os dois herdarem
     int pipefd_pai_filho[2];  //comunicação pai para filho
     int pipefd_filho_pai[2];  //comunicação filho para pai
-    char mensagemByte;        //var que armazena um byte da mensagem
+    char mensagemByte;        //var que armazena a mensagem
     pid_t pid;                
 
     if (pipe(pipefd_pai_filho) == -1 || pipe(pipefd_filho_pai) == -1) {
