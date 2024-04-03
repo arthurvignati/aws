@@ -7,13 +7,6 @@
 //#define ESCRITA 1
 
 int main(void) {
-  
-  
-
-  //inicializa os pipe's do filho e do pai antes do fork para os dois herdarem
-//int pipefd_pai_filho[2];  //comunicação pai para filho
-//int pipefd_filho_pai[2];  //comunicação filho para pai
-//char mensagemByte;        //var que armazena a mensagem
   pid_t pid;
 
   int n;
@@ -58,27 +51,29 @@ printf("Quantas pessoas? R: ")
     close(pipefd[1]);
     exit(EXIT_SUCESS)
 
-
-
-
-
-
     
   } 
   else {  //PROCESSO PAI
-    close(pipefd_pai_filho[LEITURA]); //fecha leitura no pipe pai para filho
-    close(pipefd_filho_pai[ESCRITA]); //fecha escrita no pipe filho para pai
-    //mensagem pai para filho
-    char msg_pai[] = "Mensagem do pai\n";
-    write(pipefd_pai_filho[ESCRITA], msg_pai, sizeof(msg_pai) - 1);
-    close(pipefd_pai_filho[ESCRITA]);    
+    close(pipefd[1]);
+
     wait(NULL);
-    //ler as mensagens do pipe filho para o pai 
-    while (read(pipefd_filho_pai[0], &mensagemByte, 1) > 0) {
-      printf("%c", mensagemByte); 
+    read(pipefd[0], &fim_subida, sizeof(fim_subida));
+
+    for (int i = 0; i < n; i++){
+      if (direcoes[i] == 1){
+        if (t[i] >= fim_subida){
+          fim_descida = t[i] + 10;
         }
-    printf("\n");
-    close(pipefd_filho_pai[LEITURA]);
-    return 0;  
+        else{
+          fim_descida = fim_subida + 10;
+        }
+      }
+    }
+
+    tempo_final = (fim_subida > fim_descida) ? fim_subida : fim_descida;
+    printf("Tempo final: %d\n", tempo_final);
+    close(pipefd[0]);
+    return 0;
+    
     }
 }
