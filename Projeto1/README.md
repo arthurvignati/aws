@@ -12,10 +12,8 @@ Considere o problema da escada rolante em anexo. Implemente uma solução utiliz
 
   R: Para garantir que somente uma das direções está ativa de cada vez no PROCESSO, observa-se o uso de fim_subida e fim_descida para calcular quando a próxima pessoa pode começar sua subida ou descida. Essas variáveis são inicialmente definidas como zero, representando que a escada rolante está pronta para uso. O processo filho, ao terminar de processar todas as subidas, envia através de um pipe (pipefd_pai_filho) o tempo em que a última subida terminou (fim_subida) para o processo pai. Isso significa que qualquer subida subsequente só pode ocorrer após todas as descidas serem processadas, garantindo que a escada opere em uma única direção por vez. O processo pai, antes de iniciar o processamento das descidas, aguarda (wait(NULL)) a conclusão do processo filho. Isso assegura que as descidas só comecem após todas as subidas planejadas serem concluídas. O processo pai então lê o tempo final da última subida enviada pelo filho antes de processar as descidas.
   
-    Portanto, essa comunicação bidirecional garante que todas as subidas são concluídas antes de iniciar quaisquer descidas, e uma nova série de subidas só pode começar após a conclusão de todas as descidas.
+  Portanto, essa comunicação bidirecional garante que todas as subidas são concluídas antes de iniciar quaisquer descidas, e uma nova série de subidas só pode começar após a conclusão de todas as descidas.
 
-    R: Já a estratégia utilizada com THREADS...
+   R: Já a estratégia utilizada com THREADS...
 
-
-  
 3. Discorra sobre as diferenças entre as implementações utilizando threads e processos e diga qual foi mais eficiente na solução do problema, justificando sua resposta.
