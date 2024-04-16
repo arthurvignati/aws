@@ -60,6 +60,30 @@ void* subida(void* arg) {
     return NULL;
 }
 
+void* descida(void* arg) {
+    EscadaArgs* escadaArgs = (EscadaArgs*) arg;
+    pthread_mutex_lock(&mutex);
+
+    while (fim_subida == 0) {
+        pthread_cond_wait(&pode_descer, &mutex);
+    }
+
+    for (int i = 0; i < escadaArgs->n; i++) {
+        if (escadaArgs->direcoes[i] == 1) {
+            if (escadaArgs->t[i] >= fim_subida) {
+                fim_descida = escadaArgs->t[i] + 10;
+            } else {
+                fim_descida = fim_subida + 10;
+            }
+        }
+    }
+
+    //printf("Descida completa. Fim em T=%d\n", fim_descida);
+    pthread_cond_signal(&pode_subir);
+    pthread_mutex_unlock(&mutex);
+    return NULL;
+}
+
 
 
 
