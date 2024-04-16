@@ -31,8 +31,9 @@ int main(void) {
     perror("Fork Failed");
     return 1;
   }
-
-  if (pid == 0) {  //PROCESSO FILHO
+  
+  //PROCESSO FILHO
+  if (pid == 0) {  
     close(pipefd_filho_pai[1]); //fecha escrita filho --> pai
     close(pipefd_pai_filho[0]); // fecha leitura pai --> filho
     for (int i = 0; i < n; i++){
@@ -54,7 +55,8 @@ int main(void) {
     exit(EXIT_SUCESS)
     
   } 
-  else {  //PROCESSO PAI
+  //PROCESSO PAI
+  else {  
     close(pipefd_filho_pai[0]); //fecha leitura filho --> pai 
     close(pipefd_filho_pai[1]); //fecha escrita pai --> filho
     
