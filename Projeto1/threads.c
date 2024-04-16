@@ -83,5 +83,26 @@ void* descida(void* arg) {
 }
 
 int main(){
+    pthread_t tid_subida, tid_descida;
+    char* caminhoArquivo = "./input/E_58";
+    EscadaArgs escadaArgs = lerPassageiros(caminhoArquivo);
+    printf("Número de passageiros: %d\n", escadaArgs.n);
+    
+    for (int i = 0; i < escadaArgs.n; i++) {
+        printf("Passageiro %d - Momento: %d, Direção: %d\n", i+1, escadaArgs.t[i], escadaArgs.direcoes[i]);
+    }
+
+    pthread_create(&tid_subida, NULL, subida, &escadaArgs);
+    pthread_create(&tid_descida, NULL, descida, &escadaArgs);
+
+    pthread_join(tid_subida, NULL);
+    pthread_join(tid_descida, NULL);
+
+    int tempoFinal = (fim_subida > fim_descida) ? fim_subida : fim_descida; 
+    printf("Tempo final: T=%d\n", tempoFinal);
+    free(escadaArgs.t);
+    free(escadaArgs.direcoes);
+
+    return 0; 
     
 }
