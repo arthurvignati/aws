@@ -54,7 +54,6 @@ void* subida(void* arg) {
         }
     }
 
-    //printf("Subida completa. Fim em T=%d\n", fim_subida);
     pthread_cond_signal(&pode_descer);
     pthread_mutex_unlock(&mutex);
     return NULL;
@@ -78,7 +77,6 @@ void* descida(void* arg) {
         }
     }
 
-    //printf("Descida completa. Fim em T=%d\n", fim_descida);
     pthread_cond_signal(&pode_subir);
     pthread_mutex_unlock(&mutex);
     return NULL;
