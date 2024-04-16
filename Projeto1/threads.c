@@ -88,10 +88,6 @@ int main(){
     EscadaArgs escadaArgs = lerPassageiros(caminhoArquivo);
     printf("Número de passageiros: %d\n", escadaArgs.n);
     
-    for (int i = 0; i < escadaArgs.n; i++) {
-        printf("Passageiro %d - Momento: %d, Direção: %d\n", i+1, escadaArgs.t[i], escadaArgs.direcoes[i]);
-    }
-
     pthread_create(&tid_subida, NULL, subida, &escadaArgs);
     pthread_create(&tid_descida, NULL, descida, &escadaArgs);
 
