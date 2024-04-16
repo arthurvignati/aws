@@ -82,8 +82,3 @@ void* descida(void* arg) {
     return NULL;
 }
 
-
-
-
-
-
