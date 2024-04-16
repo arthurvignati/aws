@@ -40,5 +40,28 @@ EscadaArgs lerPassageiros(char* caminhoArquivo) {
 }
 
 
+void* subida(void* arg) {
+    EscadaArgs* escadaArgs = (EscadaArgs*) arg;
+    pthread_mutex_lock(&mutex);
+
+    for (int i = 0; i < escadaArgs->n; i++) {
+        if (escadaArgs->direcoes[i] == 0) {
+            if (escadaArgs->t[i] >= fim_descida) {
+                fim_subida = escadaArgs->t[i] + 10;
+            } else {
+                fim_subida = fim_descida + 10;
+            }
+        }
+    }
+
+    //printf("Subida completa. Fim em T=%d\n", fim_subida);
+    pthread_cond_signal(&pode_descer);
+    pthread_mutex_unlock(&mutex);
+    return NULL;
+}
+
+
+
+
 
 
