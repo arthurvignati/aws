@@ -24,7 +24,9 @@ Passageiros lerPassageiros(const char* caminhoArquivo) {
   if (arquivo == NULL) {
     fprintf(stderr, "Erro ao abrir o arquivo %s.\n", caminhoArquivo);
     exit(EXIT_FAILURE);
-  }  
+  } else{
+      printf("Arquivo %s aberto com sucesso.\n", caminhoArquivo);
+  }
   Passageiros p; 
   fscanf(arquivo, "%d", &p.n);
   p.t = (int*) malloc(p.n * sizeof(int));
