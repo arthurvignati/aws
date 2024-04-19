@@ -84,7 +84,7 @@ void* descida(void* arg) {
 
 int main(){
     pthread_t tid_subida, tid_descida;
-    char* caminhoArquivo = "./input/E_58";
+    char* caminhoArquivo = "./input/E_5";
     EscadaArgs escadaArgs = lerPassageiros(caminhoArquivo);
     printf("Número de passageiros: %d\n", escadaArgs.n);
     
