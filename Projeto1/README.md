@@ -14,7 +14,7 @@ Considere o problema da escada rolante em anexo. Implemente uma solução utiliz
 
 3. Discorra sobre as diferenças entre as implementações utilizando threads e processos e diga qual foi mais eficiente na solução do problema, justificando sua resposta.
 
-
+  R: A implementação com processos cria um processo filho e utiliza pipes para comunicação entre processos, o que implica em maior isolamento e segurança, mas também em maior custo de recursos e complexidade na comunicação. Já a implementação com threads compartilha o espaço de memória entre as threads de subida e descida, usando mutexes e variáveis de condição para sincronização, resultando em uma comunicação mais eficiente e rápida, porém requer cuidados adicionais para evitar problemas de acesso concorrente aos recursos compartilhados. Em termos de eficiência operacional, especialmente em tarefas que exigem interação frequente e compartilhamento de estado, como na gestão de passageiros na escada rolante, a abordagem com threads tende a ser mais eficaz
 
 
 
