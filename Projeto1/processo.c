@@ -40,7 +40,13 @@ Passageiros lerPassageiros(const char* caminhoArquivo) {
 }
 
 int main() {
-  Passageiros p = lerPassageiros("./input/E_5");
+  char caminhoEntrada[100];
+  printf("Utilize ./input/E_n, onde n será a entrada que você quer utilizar.\n");
+  printf("Por Exemplo ./input/E_5\n");
+  printf("Qual o caminho do arquivo de entrada: ");
+  scanf("%s", caminhoEntrada);    
+    
+  Passageiros p = lerPassageiros(caminhoEntrada);
   printf("Número de passageiros: %d\n", p.n);
   
   int fim_subida = 0;
