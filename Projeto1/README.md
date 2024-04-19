@@ -21,7 +21,7 @@ Considere o problema da escada rolante em anexo. Implemente uma solução utiliz
 Executando no AWS
 
 Processos (E_5) --> Tempo final = 35 
-![image](https://github.com/arthurvignati/so/assets/161461962/3cadef19-c378-4284-a64f-9c28ec1eaf2c)
+![image](https://github.com/arthurvignati/so/assets/161461962/ad958305-1b94-4d3a-9190-a485049cf4e9)
 
 
 Threads (E_5) --> Tempo final = 35
