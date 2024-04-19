@@ -23,3 +23,8 @@ Executando no AWS
 Processos (E_5)
 ![image](https://github.com/arthurvignati/so/assets/161461962/3cadef19-c378-4284-a64f-9c28ec1eaf2c)
 
+
+Threads (E_58)
+![image](https://github.com/arthurvignati/so/assets/161461962/e6f76e98-162f-412a-b39e-c4cd164d799d)
+
+
