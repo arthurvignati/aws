@@ -84,8 +84,14 @@ void* descida(void* arg) {
 
 int main(){
     pthread_t tid_subida, tid_descida;
-    char* caminhoArquivo = "./input/E_5";
-    EscadaArgs escadaArgs = lerPassageiros(caminhoArquivo);
+    
+    char caminhoEntrada[100];
+    printf("Utilize ./input/E_n, onde n será a entrada que você quer utilizar.\n");
+    printf("Por Exemplo ./input/E_5\n");
+    printf("Qual o caminho do arquivo de entrada: ");
+    scanf("%s", caminhoEntrada);
+    
+    EscadaArgs escadaArgs = lerPassageiros(caminhoEntrada);
     printf("Número de passageiros: %d\n", escadaArgs.n);
     
     pthread_create(&tid_subida, NULL, subida, &escadaArgs);
