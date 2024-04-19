@@ -43,6 +43,18 @@ Threads (E_5) --> Tempo final = 35
 
 
 
+Processos (E_25) --> Tempo final = 80316
+
+![image](https://github.com/arthurvignati/so/assets/161461962/c6bdfe5b-bd48-4b99-b801-6e1cae1543f7)
+
+
+
+
+Threads (E_25) --> Tempo final = 80316
+
+![image](https://github.com/arthurvignati/so/assets/161461962/09ac23fc-80dd-4222-a132-79ff0f0f9898)
+
+
 
 Processos (E_58) --> Tempo final = 55020
 
