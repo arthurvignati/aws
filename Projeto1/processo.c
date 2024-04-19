@@ -38,7 +38,7 @@ Passageiros lerPassageiros(const char* caminhoArquivo) {
 }
 
 int main() {
-  Passageiros p = lerPassageiros("./input/E_4");  
+  Passageiros p = lerPassageiros("./input/E_5");  
   
   int fim_subida = 0;
   int fim_descida = 0;
