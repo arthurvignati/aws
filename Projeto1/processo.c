@@ -40,7 +40,8 @@ Passageiros lerPassageiros(const char* caminhoArquivo) {
 }
 
 int main() {
-  Passageiros p = lerPassageiros("./input/E_5");  
+  Passageiros p = lerPassageiros("./input/E_5");
+  printf("Número de passageiros: %d\n", p.n);
   
   int fim_subida = 0;
   int fim_descida = 0;
