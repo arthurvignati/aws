@@ -13,3 +13,12 @@ Considere o problema da escada rolante em anexo. Implemente uma solução utiliz
    R: Já a estratégia utilizada com THREADS observamos as variáveis de condição "pthread_cond_t pode_descer" e "pthread_cond_t pode_subir", que são essenciais para garantir que apenas uma direção da escada rolante esteja ativa por vez, já que elas funcionam como sinais que permitem que as threads aguardem por certas condições antes de continuar sua execução. Isso é alcançado fazendo uma thread esperar até que outra sinalize que é seguro proceder, utilizando funções como pthread_cond_wait() para bloquear a thread e pthread_cond_signal() para sinaliza-la, garantindo uma transição ordenada e segura entre as operações.
 
 3. Discorra sobre as diferenças entre as implementações utilizando threads e processos e diga qual foi mais eficiente na solução do problema, justificando sua resposta.
+
+
+
+
+
+Executando no AWS
+Processos (E_5)
+![image](https://github.com/arthurvignati/so/assets/161461962/3cadef19-c378-4284-a64f-9c28ec1eaf2c)
+
