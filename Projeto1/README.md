@@ -19,6 +19,7 @@ Considere o problema da escada rolante em anexo. Implemente uma solução utiliz
 
 
 Executando no AWS
+
 Processos (E_5)
 ![image](https://github.com/arthurvignati/so/assets/161461962/3cadef19-c378-4284-a64f-9c28ec1eaf2c)
 
