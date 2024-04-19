@@ -1,7 +1,17 @@
-#include <stdio.h> 
 #include <stdlib.h>
-#include <unistd.h>
+#include <malloc.h>
+#include <sys/types.h>
+#include <sys/mman.h>
 #include <sys/wait.h>
+#include <signal.h>
+#include <sched.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <wait.h>
+#include <semaphore.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#define _GNU_SOURCE
 
 typedef struct {
     int n;
@@ -24,7 +34,7 @@ Passageiros lerPassageiros(const char* caminhoArquivo) {
     fscanf(arquivo, "%d %d", &p.t[i], &p.direcoes[i]);
   }
   fclose(arquivo);
-  retun p;  
+  return p;  
 }
 
 int main() {
@@ -63,7 +73,7 @@ int main() {
 
     write(pipefd_pai_filho[1], &fim_subida, sizeof(fim_subida));
     close(pipefd_pai_filho[1]);
-    exit(EXIT_SUCESS);    
+    exit(EXIT_SUCCESS);    
    
     //PROCESSO PAI
   } else {  
@@ -92,6 +102,6 @@ int main() {
     printf("Tempo final: %d\n", tempo_final);        
     }
   free(p.t);
-  free(direcoes.t);
+  free(p.direcoes);
   return 0;
 }
