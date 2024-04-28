@@ -24,3 +24,17 @@ void Pth_matriz_vetor(void *rank) {
   }
   pthread_exit(NULL);
 }
+
+int main(){
+  long thread;
+  pthread_t* thread_handles;
+  thread_handles = malloc(thread_count * sizeof(pthread_t));
+
+  for (thread = 0; thread < thread_count; thread++){
+    pthread_create(&thread_handles[thread], NULL, Pth_matriz_vetor, (void *)thread);
+  }
+
+  for (thread = 0; thread < thread_count; thread++) {
+    pthread_join(thread_handles[thread], NULL);
+  }
+}
