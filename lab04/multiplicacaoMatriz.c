@@ -37,4 +37,10 @@ int main(){
   for (thread = 0; thread < thread_count; thread++) {
     pthread_join(thread_handles[thread], NULL);
   }
+
+  free(thread_handles);
+  for (int i = 0; i < m; i++) {
+    printf("y[%d] = %f\n", i, y[i]);
+  }
+  return 0;
 }
