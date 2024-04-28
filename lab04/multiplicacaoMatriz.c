@@ -17,6 +17,10 @@ void Pth_matriz_vetor(void *rank) {
   int end_row = (my_rank == thread_count - 1) ? m - 1 : start_row + local_m - 1;
 
   for (int i = start_row; i <= end_row; i++){
-    
+    y[i] = 0.0;
+    for (int j = 0; j < n; j++){
+      y[i] += A[i][j] * x[j];
+    }
   }
+  pthread_exit(NULL);
 }
