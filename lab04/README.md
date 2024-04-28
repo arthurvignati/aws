@@ -1,1 +1,1 @@
-
+  O programa em questão utiliza a biblioteca pthread para paralelizar a multiplicação de uma matriz por um vetor, visando um processamento mais eficiente e rápido. A matriz A, de dimensão 4x3, é multiplicada pelo vetor x de tamanho 3, resultando no vetor y de tamanho 4. Para alcançar a paralelização, dividimos as iterações do loop externo, que corresponde às linhas da matriz A, entre várias threads, em que cada uma das quatro threads calcula uma parte do vetor resultado y 
