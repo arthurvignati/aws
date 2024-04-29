@@ -1,5 +1,6 @@
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int m = 4;
 int n = 3;
@@ -8,7 +9,7 @@ double x[3] = {1, 3, 4};
 double y[4]; 
 int thread_count = 4;
 
-void Pth_matriz_vetor(void *rank) {
+void* Pth_matriz_vetor(void *rank) {
   long my_rank = (long)rank;
   int i, j;
   int local_m = m / thread_count;
