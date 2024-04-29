@@ -6,6 +6,6 @@
 
   Portanto, essa abordagem paralela não apenas acelera o cálculo da multiplicação matriz-vetor mas também otimiza o uso dos recursos computacionais, sendo uma estratégia eficaz para o processamento de grandes volumes de dados ou para aplicações que exigem alta performance.
 
-EXECUÇÃO SERVIDOR AWS
+## EXECUÇÃO SERVIDOR AWS
 
 ![image](https://github.com/arthurvignati/so/assets/161461962/77dceb0a-8e70-436d-9ba3-d86f8a3c0482)
