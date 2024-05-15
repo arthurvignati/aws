@@ -43,3 +43,14 @@ void* transferencia(void *arg) {
   free(arg);
   return NULL;
 }
+
+void trocarContas(char *direcao, char *fromSaida, char *toSaida){
+  pthread_mutex_lock(&lock);
+  conta aux = from;
+  from = to;
+  to = aux;
+  pthread_mutex_unlock(&lock);
+  snprintf(direcao, 12, "To → From");
+  snprintf(fromSaida, 10, "to");
+  snprintf(toSaida, 10, "from");
+}
