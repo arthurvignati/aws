@@ -94,7 +94,7 @@ int main(){
     }
     pthread_join(thread, NULL);
     transferCount++;
-  }
+  
   if (transferCount % 10 == 0) {
     printf("Transferências concluídas!\n");
     printf("Saldo de c1(%s): %d\n", fromSaida, from.saldo);
@@ -105,9 +105,9 @@ int main(){
       printf("Contas Trocadas. Transferindo 10 (10 vezes) %s\n", direcao);
     }
   }
-
-  if (from.saldo == 100 && to.saldo == 100){
+    if (from.saldo == 100 && to.saldo == 100){
     break;
+  }
   }
   pthread_mutex_destroy(&lock);
 
