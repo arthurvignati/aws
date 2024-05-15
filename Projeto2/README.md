@@ -10,9 +10,7 @@ O código realiza transferências de valores entre duas contas usando threads cr
 
 #Implementação
 
-Ponto 1: A conta to pode receber mais de uma transferência simultânea
-
-Ponto 2: A conta from pode enviar mais de uma transferência simultânea
+Ponto 1 e 2: A conta to pode receber mais de uma transferência simultânea e a conta from pode enviar mais de uma transferência simultânea
 
 Ponto 3: A conta from não pode enviar dinheiro se não tiver mais saldo (deve aparecer um aviso falando que não é possível mais enviar dinheiro)
 
