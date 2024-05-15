@@ -5,8 +5,9 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include <string.h>
+
+#define FIBER_STACK 1024 * 64
 
 struct c {
 int saldo;
@@ -21,18 +22,18 @@ struct transfer{
 conta *from;
 conta *to;
 int valor;
-char direcao[12];
-char fromSaida[10];
-char toSaida[10];
+const char *direcao;
+const char *fromSaida];
+const char *fromSaida;
 };
 
 //Função executada pelo thread na fila
 void* transferencia(void *arg) {
   struct transfer *args = (struct transfer *)arg;
   pthread_mutex_lock(&lock); //trava o mutex 
-  if (args->from->saldo >= args->valor){
-    args->from->saldo -= args->valor;
-    args->to->saldo += args->valor;
+  if (args->from->saldo >= args->valor){ //verifica se há saldo suficiente
+    args->from->saldo -= args->valor;     //subtrai o valor da conta 'from'
+    args->to->saldo += args->valor;       //adiciona o valor à conta 'to'
     printf("Transferência realizada com sucesso (%s)\n", args->direcao);
   }else{
     printf("Não é possível enviar dinheiro por saldo insuficiente (%s)!\n", args->direcao);
@@ -44,15 +45,15 @@ void* transferencia(void *arg) {
   return NULL;
 }
 
-void trocarContas(char *direcao, char *fromSaida, char *toSaida){
+void trocarContas(char **direcao, char **fromSaida, char **toSaida){
   pthread_mutex_lock(&lock);
   conta aux = from;
   from = to;
   to = aux;
   pthread_mutex_unlock(&lock);
-  snprintf(direcao, 12, "To → From");
-  snprintf(fromSaida, 10, "to");
-  snprintf(toSaida, 10, "from");
+  *direcao = "To → From";
+  *fromSaida = "to";
+  *toSaida = "from";
 }
 
 int main(){
