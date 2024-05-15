@@ -8,7 +8,7 @@ O código realiza transferências de valores entre duas contas usando threads cr
 
 
 
-#Implementação
+# Implementação
 
 Ponto 1 e 2: A conta to pode receber mais de uma transferência simultânea e a conta from pode enviar mais de uma transferência simultânea
 
