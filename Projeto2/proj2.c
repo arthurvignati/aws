@@ -110,11 +110,5 @@ int main(){
   }
   }
   pthread_mutex_destroy(&lock);
-
-  printf("Transferências concluídas!\n");
-  printf("Saldo de c1: %d\n", from.saldo);
-  printf("Saldo de c2: %d\n", to.saldo);
-
-  return 0;
-  
+  return 0;  
 }
