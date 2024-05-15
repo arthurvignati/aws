@@ -1,1 +1,9 @@
-
+#define _GNU_SOURCE
+#include <malloc.h>
+#include <pthread.h> 
+#include <sched.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
