@@ -68,13 +68,15 @@ int main(){
   from.saldo = 100;
   to.saldo = 100;
 
-  printf("Transferindo 10 (10 vezes) para a conta c2\n");
+  printf("Transferindo 10 para a conta c2 (10 vezes)\n");
   valor = 10;
+  
   int transferCount = 0;
-  char direcao[12] = "From → To";
-  char fromSaida[10] = "from";
-  char toSaida[10] = "to";
+  const char *direcao = "From → To";
+  const char *fromSaida = "from";
+  const char *toSaida = "to";
 
+  // Cria 100 threads para realizar transferências
   for (i = 0; i < 100; i++){
     struct transfer *args = malloc(sizeof(struct transfer));
     if (args == NULL){
@@ -84,9 +86,9 @@ int main(){
     args->from = &from;
     args->to = &to;
     args->valor = valor;
-    snprintf(args->direcao, sizeof(args->direcao), "%s", direcao);
-    snprintf(args->fromSaida, sizeof(args->fromSaida), "%s", fromSaida);
-    snprintf(args->toSaida, sizeof(args->toSaida), "%s", toSaida);
+    args->direcao = direcao;
+    args->from_label = from_label;
+    args->to_label = to_label;
 
     pthread_t thread;
     if (pthread_create(&thread, NULL, transferencia, (void*)args) != 0){
@@ -96,6 +98,7 @@ int main(){
     pthread_join(thread, NULL);
     transferCount++;
   
+  // Troca as contas após cada 10 transferências
   if (transferCount % 10 == 0) {
     printf("Transferências concluídas!\n");
     printf("Saldo de c1(%s): %d\n", fromSaida, from.saldo);
