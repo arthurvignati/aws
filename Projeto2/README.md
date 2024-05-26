@@ -31,6 +31,10 @@ Ponto 3: A conta from não pode enviar dinheiro se não tiver mais saldo (deve a
 
 *Para demonstrar o aviso falando que não é possível mais enviar dinheiro, atribuímos a conta From o valor de 100 e a Conta To o valor de 100, e o valor de transferência nesse caso seria de 100 reais, de tal forma que quando a conta From possuir o valor 0 e a conta To possuir o valor 200 (após uma transferência) aparecerá o aviso de erro, uma vez que From não possuí mais dinheiro para enviar.
 
+![image](https://github.com/arthurvignati/so/assets/161461962/a08a4829-6490-4a49-8d05-40784b474ae8)
+
+
+
 Ponto 4: A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar
 
 ![image](https://github.com/arthurvignati/so/assets/161461962/be02e669-40c6-485b-bd3a-f825c7427a63)
@@ -42,3 +46,4 @@ Ponto 4: A conta to pode trocar de ordem com a conta from, ou seja, a conta que 
 
 Ponto 5: Poderão ser realizadas até 100 transações simultâneas de transferência
 
+![image](https://github.com/arthurvignati/so/assets/161461962/72cdb4b9-360f-4aaa-8679-83aa7be573f2)
