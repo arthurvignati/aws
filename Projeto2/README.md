@@ -21,6 +21,12 @@ O código realiza transferências de valores entre duas contas utilizando thread
 
 Ponto 1 e 2: A conta to pode receber mais de uma transferência simultânea e a conta from pode enviar mais de uma transferência simultânea
 
+![image](https://github.com/arthurvignati/so/assets/161461962/bb7b41b9-c94f-4626-9ea5-5c9c9f1afbed)
+
+![image](https://github.com/arthurvignati/so/assets/161461962/35b2b07e-8766-4058-bb36-15a222950867)
+
+
+
 Ponto 3: A conta from não pode enviar dinheiro se não tiver mais saldo (deve aparecer um aviso falando que não é possível mais enviar dinheiro)
 
 *Para demonstrar o aviso falando que não é possível mais enviar dinheiro, atribuímos a conta From o valor de 50 e a Conta To o valor de 50, e o valor de transferência nesse caso seria de 20 reais, de tal forma que quando a conta From possuir o valor 10 e a conta To possuir o valor 90 (após duas transferências) aparecerá o aviso de erro, uma vez que From não possuí mais dinheiro para enviar.
