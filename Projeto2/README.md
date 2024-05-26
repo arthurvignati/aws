@@ -2,6 +2,7 @@
 
 # Grupo
 Arthur Vignati Moscardi (10409688)
+
 Guilherme Pascucci (10314281)
 
 # Problema
