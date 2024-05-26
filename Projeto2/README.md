@@ -45,5 +45,6 @@ Ponto 4: A conta to pode trocar de ordem com a conta from, ou seja, a conta que 
 
 
 Ponto 5: Poderão ser realizadas até 100 transações simultâneas de transferência
+*Para realizar até 100 transações, delimitamos a conta From ao valor de 100 e a Conta To ao valor de 100, e o valor de transferência nesse caso seria de 100 reais, de tal forma que que ocorra uma transferência de 100 transações simultaneamente.
 
 ![image](https://github.com/arthurvignati/so/assets/161461962/72cdb4b9-360f-4aaa-8679-83aa7be573f2)
