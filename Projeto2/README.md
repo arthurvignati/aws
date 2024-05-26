@@ -33,5 +33,12 @@ Ponto 3: A conta from não pode enviar dinheiro se não tiver mais saldo (deve a
 
 Ponto 4: A conta to pode trocar de ordem com a conta from, ou seja, a conta que enviava pode receber e a conta que recebia pode enviar
 
+![image](https://github.com/arthurvignati/so/assets/161461962/be02e669-40c6-485b-bd3a-f825c7427a63)
+
+![image](https://github.com/arthurvignati/so/assets/161461962/8bb0e6b4-48f7-483e-89ce-4624eef42946)
+
+
+
+
 Ponto 5: Poderão ser realizadas até 100 transações simultâneas de transferência
 
